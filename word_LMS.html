@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word</title>
+</head>
+<body>
+    <!-- 
+        pada bagian words terdapat 38 topic 
+        1. browser compatibility -> Kompabilitas peramban
+        2. introduction -> Pengenalan
+        3. Doing arithmetic with words and sentenses -> Membuat artimatika dengan kata dan kalimat
+        4. Turning a word into lots of numbers -> Mengubah sebuah kata menjadi banyak angka
+        5. Finding the closest word to a list of feature numbers -> Menemukan kata yang paling dekat dengan daftar nomor fitur
+        6. Using word embeddings to solve word analogy problems -> Menggunakan penyematan kata untuk memecahkan masalah analogi kata
+        7. Finding all the 'closest' words -> Menemukan semua kata 'terdekat'
+        8. Sentence embeddings -> Penyematan kalimat
+        9. AI-aided search in the Snap! manual and the AI guide -> Pencarian dengan bantuan AI di Snap! manual dan panduan AI
+        10. Drawing word embeddings -> Menggambar penyematan kata
+        11. Mapping 300 dimensional points to two-dimensional points -> Memetakan 300 titik dimensi ke titik dua dimensi
+        12. Generating Projector Files to visualize embeddings -> enghasilkan File Proyektor untuk memvisualisasikan penyematan
+        13. Word embeddings can do translations -> Penyematan kata dapat melakukan terjemahan
+        14. A 'Guess My Word' game using word embeddings -> Game 'Tebak Kata Saya' menggunakan penyematan kata
+        15. Question answering -> Menjawab pertanyaan
+        16. Getting responses from GPT-3, Jurassic 1, or Cohere -> Mendapatkan tanggapan dari GPT-3, Jurassic 1, atau Cohere
+        17. Having a conversation with GPT-3, Jurassic 1, or Cohere -> Melakukan percakapan dengan GPT-3, Jurassic 1, atau Cohere
+        18. Generating debates -> Menghasilkan perdebatan
+        19. Generating turtle commands -> Menghasilkan perintah penyu
+        20. Using words to generate costumes using DALLE-2 -> Menggunakan kata-kata untuk menghasilkan kostum menggunakan DALLE-2
+        21. Using Stable Diffusion to generate a costume -> Menggunakan Difusi Stabil untuk menghasilkan kostum
+        22. A generic text-to-image block -> Blok teks-ke-gambar umum
+        23. Using DALL-E-2 to create variants of a costume -> Menggunakan DALL-E-2 untuk membuat varian kostum
+        24. Using DALL-E-2 to edit a costume -> Sebuah blok untuk menghasilkan kostum varian
+        25. Using language models on Hugging Face -> Menggunakan model bahasa pada Hugging Face
+        26. Generating clues for the Codenames board game -> Menghasilkan petunjuk untuk permainan papan Nama Kode
+        27. Benefits and risks using word embeddings -> Manfaat dan risiko menggunakan penyematan kata
+        28. How do word embeddings work? -> Bagaimana cara kerja penyematan kata?
+        29. A sample project using word embeddings for translation -> Contoh proyek yang menggunakan penyematan kata untuk terjemahan
+        30. How does translation using word embeddings work? -> Bagaimana cara kerja terjemahan menggunakan penyematan kata?
+        31. Image embeddings are possible as well -> Penyematan gambar juga dimungkinkan
+        32. Possible project ideas for Natural Language Processing -> Kemungkinan ide proyek untuk Pemrosesan Bahasa Alami
+        33. Future directions for this chapter -> Arah masa depan untuk bab ini
+        34. Additional resources -> Sumber daya tambahan
+        35. Where to get these blocks to use in your projects -> Di mana mendapatkan blok ini untuk digunakan dalam proyek Anda
+        36. Learn about making and training neural nets -> Pelajari tentang membuat dan melatih jaringan saraf
+
+
+    -->
+
+<!-- 1. Kompatibilitas Peramban -->
+    <h3>Kompatibilitas Peramban</h3>
+
+    <!-- isi -->
+    <p>Pada bagian panduan ini, cukup banyak mencakup elemen interaktif yang dapat berjalan baik di <i>browser chrome</i> atau <i>edge</i>.</p>
+    <p>Untuk mengetahui cara mengatasi masalah yang dihadapi dapat dilihat <i>troubleshooting guide</i> sebagai panduan pemecahan.</p>
+    <br>
+
+<!-- 2. Perkenalan -->
+    
+    <h3>Perkenalan</h3>
+
+    <!-- isi -->
+    <p>Program AI dapat melakukan banyak hal dengan teks, termasuk :
+        1. menjawab pertanyaan (penanganan penelusuran web yang lebih cerdas)
+        2. merangkum teks
+        3. mendeteksi sentimen teks (positif/negatif, senang/sedih, marah)
+        4. penulisan teks (banyak artikel berita olahraga dan keuangan ditulis oleh komputer saat ini)
+        5. menentukan struktur gramatikal suatu kalimat
+        6. menerjemahkan antar bahasa
+    </p>
+
+<!-- 3. Melakukan aritmatika dengan kata dan kalimat -->
+    <!-- subjudul -->
+    <h3>Melakukan aritmatika dengan kata dan kalimat</h3>
+    <!-- isi -->
+    <p>Meskipun komputer dapat menangani teks sebagai rangkaian karakter, teknik yang disebut penyematan kata bekerja dengan mengubah kata menjadi daftar angka yang panjang.</p>
+    <p>Angka-angka ini dapat dibuat oleh manusia, yang mana setiap angka memiliki arti seperti ukuran minimum, ukuran maksimum, atau harapan hidup rata-rata.</p>
+    <p>Kebanyakan program AI menggunakan angka-angka yang dihasilkan oleh pembelajaran mesin. Angka-angka tersebut dibuat dengan melatih model pembelajaran mesin pada miliaran kata (misalnya, semua halaman <i>wikipedia</i> dalam bahasa tertentu).</p>
+    <p>Orang-orang tidak memahami apa arti angka-angka tersebut tetapi kata-kata yang mirip memiliki angka yang sama dan kata-kata yang tidak berhubungan memiliki angka yang sangat berbeda</p> 
+    <p>Setiap angka mengukur fitur dari kata tersebut tetapi fitur tersebut masih merupakan sebuah misteri. Kata embeddings yang digunakan dalam bab ini dibuat oleh para peneliti di  <i>researchers at Facebook</i>. Mereka melatih model pembelajaran mesin mereka dalam 157 bahasa berbeda di semua artikel <i>Wikipedia</i> dalam setiap bahasa. Meskipun masing-masing kata itu tidak cukup, mereka juga melatih model mereka pada puluhan miliar kata lagi yang ditemukan <i>crawling the web..</i> Mereka membuat tabel untuk setiap bahasa yang berisi setidaknya satu juta kata berbeda. Blok yang dijelaskan di sini menyediakan 20.000 kata paling umum untuk 15 bahasa (Cina, Inggris, Finlandia, Prancis, Jerman, Yunani, Hindi, Indonesia, Italia, Jepang, Lituania, Portugis, Sinhala, Spanyol, dan Swedia). (Tabel yang lebih besar dan lebih banyak bahasa dapat ditambahkan. Kirim permintaan ke <i>toontalk@gmail.com.</i>)</p>      
+
+<!-- 4. Mengubah sebuah kata menjadi banyak angka -->
+     <!-- subjudul -->
+    <h3>Mengubah sebuah kata menjadi banyak angka</h3>
+    <!-- isi -->
+    <p>Kami telah membuat Snap! blok untuk mengeksplorasi bagaimana penyematan kata dapat digunakan untuk menemukan kata-kata yang serupa, kata-kata yang berada di antara kata-kata lain, dan yang paling mengejutkan memecahkan masalah analogi kata. </p>
+    <p>Fitur blok kata akan melaporkan daftar 300 angka. Jika kolom bahasa dibiarkan kosong, bahasa <i>default</i> akan digunakan. Anda dapat menganggap angka-angka tersebut seperti menempatkan sebuah kata dalam ruang 300 dimensi. Jumlahnya disesuaikan sehingga seluruh 20.000 kata masuk ke dalam <i>hypersphere</i> 300 dimensi dengan radius 1. </p>
+    <P>Ada database dengan penyematan kata untuk satu juta kata tetapi memuat dan mencari kumpulan data sebesar itu akan sangat lambat. Fitur blok kata didasarkan pada 20.000 entri yang paling sering muncul berupa huruf kecil (tanpa kata benda) dan hanya berisi huruf (tanpa tanda baca atau angka).</P>
+    <img src="assets/1.png" alt="" style="width: 40%;">
+    
+
+<!-- 5. Menemukan kata yang paling dekat dengan daftar nomor fitur -->    
+    <!-- subjudul -->
+    <h3>Menemukan kata yang paling dekat dengan daftar nomor fitur</h3>
+    <!-- isi -->
+    <p>Sebuah program dapat mencari seluruh kata untuk menemukan kata yang paling dekat dengan daftar angka. Kata yang paling dekat dengan blok reporter melakukan hal ini.    </p>
+    <img src="assets/2.png" alt="" style="width: 40%;">
+    <p>Menemukan kata yang paling dekat dengan sebuah kata. COBALAH! Kemudian coba lagi setelah mengubahnya ke bahasa yang Anda tahu.</p>
+    
+<!-- 6. Menemukan kata di tengah-tengah antara dua kata lainnya -->    
+    <!-- subjudul -->
+    <h3>Menemukan kata di tengah-tengah antara dua kata lainnya    </h3>
+    <!-- isi -->
+    <p>Anda dapat mengambil dua kata dan menghitung rata-rata ciri-cirinya dengan menjumlahkan angka-angka yang sesuai dan membagi hasilnya dengan angka2. Anda kemudian dapat menggunakan kata yang paling dekat dengan pelapor untuk menemukan kata yang paling mendekati rata-rata.</p>
+    <img src="assets/3.png" alt="" style="width: 40%;">
+    <p>Menemukan kata yang paling dekat dengan rata-rata dua kata. COBALAH!</p>
+    <p>Cobalah membuat rata-rata lebih dari dua kata. Dan lihat kata apa yang paling dekat antara dua kata selain titik tengahnya.</p>
+
+<!-- 7. Menggunakan penyematan kata untuk memecahkan masalah analogi kata -->    
+    <!-- subjudul -->
+    <h3>Menggunakan penyematan kata untuk memecahkan masalah analogi kata</h3>
+    <!-- isi -->
+     <p>Salah satu hal yang paling mengejutkan tentang penyematan kata adalah dengan rumus yang tepat, seseorang dapat menyelesaikan masalah analogi kata. Misalnya, "laki-laki bagi perempuan adalah raja bagi apa?" dapat dinyatakan sebagai "raja+(wanita-pria)=x"</p>
+     <img src="assets/4.png" alt="" style="width: 40%;">
+     <p>Memecahkan masalah analogi kata. COBALAH! Kemudian temukan analogi lain yang berhasil.</p>
+     <p>Perhatikan bahwa "raja bagi laki-laki dan perempuan bagi apa?" dapat dinyatakan sebagai "wanita+(raja-pria)=x". Dan "raja+(wanita-pria)=x" dan "wanita+(raja-pria)=x" adalah setara namun memecahkan masalah analogi kata yang berbeda!</p>
+     <p>Penggunaan penyematan kata ini juga berfungsi untuk analogi tata bahasa. Coba pecahkan "lambat menjadi lebih lambat dan cepat menjadi apa?". Anda mungkin perlu menambahkan 'cepat' sebagai pengecualian.</p>
+     <p>Kami telah menerbitkan beberapa makalah tentang penggunaan penyematan kata.Lihatlah <i>our publications</i>.</p>
+     <p>Perhatikan bahwa untuk analogi kata dalam bentuk A ke B dan C ke D, jarak antara A-B ke C-D jauh lebih kecil dibandingkan jika A, B, C, dan D hanyalah kata-kata yang dipilih secara acak. Seseorang dapat menelusuri daftar kata dengan memilih empat kata dan mengukur jarak antara perbedaan antara pasangan kata. Jika seseorang hanya menyimpannya di tempat yang jaraknya kecil, dia mungkin akan menemukan teka-teki analogi kata baru. Namun, jika seseorang melakukan ini dengan menelusuri 20.000 kata, maka 3.998.800.199.970.000 kombinasi harus dipertimbangkan. <i>project that enables one to search through a smaller set</i>.</p>
+
+<!-- 8. Menemukan semua kata 'terdekat' -->    
+    <!-- subjudul -->
+    <h3>Menemukan semua kata 'terdekat'    </h3>
+    <!-- isi -->   
+     <p>Jika Anda menggunakan kata yang paling dekat dengan reporter untuk mengurutkan semua kata berdasarkan jarak ke daftar fitur, ini akan memakan waktu sekitar satu hari penuh karena harus memanggil reporter sebanyak 20.000 kali. Sebagai gantinya, kami memberikan kata yang paling mirip dengan reporter (perhatikan bentuk jamaknya) yang melakukan semuanya sekaligus dalam waktu kurang dari satu detik jika perangkat memiliki <i>GPU</i> (kecuali saat pertama kali dipanggil, mungkin diperlukan waktu beberapa detik). Secara opsional, ia juga dapat melaporkan jarak sebagai kosinus.</p>  
+     <img src="assets/5.png" alt="" style="width: 40%;">
+     <P>Temukan semua kata yang paling dekat dengan sebuah kata atau daftar fitur. COBALAH!</P>
+     <P>Meskipun seseorang jarang membutuhkan 20.000 kata, mungkin menarik untuk membandingkan dua kata dengan melihat berapa banyak dari 100 atau 500 kata terdekat yang memiliki kesamaan. Pikirkan kegunaan lain dari reporter ini.</P>
+
+<!-- 9. Menemukan seberapa dekat beberapa fitur dengan daftar fitur lainnya -->    
+    <!-- subjudul -->
+    <h3> Menemukan seberapa dekat beberapa fitur dengan daftar fitur lainnya</h3>
+    <!-- isi -->  
+     <P>Fitur yang paling dekat dengan daftar fitur, blok laporan fitur mana yang paling dekat dengan daftar fitur tertentu. Ini melaporkan daftar semua fitur yang terdaftar, diurutkan berdasarkan jaraknya ke fitur tertentu. Kesamaan kosinus juga dilaporkan. Blok ini berfungsi baik dengan penyematan kata, kalimat, atau gambar. Atau tabel data seperti gambar di bawah ini. Perhatikan bahwa nilainya harus berada dalam rentang yang sama. (Berat diberikan dalam jumlah ratusan kilogram karena alasan ini.)</P>
+     <img src="assets/6.png" alt="" style="width: 40%;">
+     <P>Temukan semua fitur yang paling dekat dengan daftar fitur. COBALAH!</P>
+
+<!-- 9. Penyematan kalimat -->    
+    <!-- subjudul -->
+    <h3> Penyematan kalimat</h3>
+    <!-- isi -->
+     <P>Seseorang dapat menghitung penyematan kalimat dengan merata-ratakan semua kata dalam sebuah kalimat. Namun, ada cara yang jauh lebih baik dengan menggunakan model yang dilatih untuk menangani tugas tingkat kalimat.</P>
+     <P><i>Universal Sentence Encoder</i> adalah salah satu model yang tersedia di <i>browser</i>. Para reporter mendapatkan fitur kalimat dan mendapatkan fitur kalimat menggunakan <i>Universal</i> <i>Sentence Encoder</i> ini untuk menghasilkan 512 angka untuk kalimat apa pun. (Benar-benar rangkaian kata apa pun, tidak harus berupa kalimat tata bahasa.)</P>
+    <p>Ini dapat digunakan untuk mengukur seberapa mirip dua kalimat. Mempertimbangkan</p>
+        <ol>A.Apa kabarmu? </ol>
+        <ol>B.Berapa umurmu?</ol>
+        <ol>C.Berapa umur anda?</ol>
+        <ol>A dan B mempunyai banyak kata yang sama tetapi B dan C mempunyai arti yang mirip.</ol>
+    <p>Fitur mendapatkan kalimat, Blok menerima teks multi-kata dan melaporkan daftar 512 angka. Untuk membandingkan kalimat kami, menggunakan kesamaan kosinus yang biasanya bekerja lebih baik daripada jarak <i>Euclidean</i>. Menggunakan <i>arc cosinus</i> mengubah kesamaan kosinus menjadi sudut untuk kejelasan.</p>
+    <img src="assets/7.png" alt="" style="width: 40%;">
+    <p>Berikut cara membandingkan kalimat. COBALAH!</p>
+    <p>Ide penggunaan penyematan kalimat untuk menentukan kalimat mana yang lebih dekat dengan kalimat lain dapat menjadi dasar dari sebuah permainan.</p>
+    <img src="assets/8.png" alt="" style="width: 40%;">
+    <p>Sebuah permainan menemukan kalimat terdekat </p>
+    <p>Pengkodean kalimat dapat digunakan lebih dari sekadar membandingkan kalimat. Dikombinasikan dengan model pembelajaran mendalam (lihat bab tentang  <i>chapter on creating, training, and using machine learning models</i>), model tersebut dapat digunakan untuk melatih sistem guna mendeteksi sentimen, emosi, topik, dan banyak lagi.</p>    
+    <img src="assets/9.png" alt="" style="width: 40%;">
+    <p>Berikut adalah model pembelajaran mesin yang menebak tingkat kepercayaan diri Anda. COBALAH!</p>
+    <p>Versi layar penuh dari program ini dapat ditemukan  <i>found here</i>. Model pembelajaran mesin yang digunakan dilatih dalam <i>project</i> ini.</p>
+    <p>Alternatif fitur blok kalimat adalah yang menggunakan <i>GPT-3</i> versi kecil dari <i>OpenAI</i>. Layanan ini menyediakan penyematan nomor 1536 dan mungkin memiliki kualitas yang jauh lebih tinggi. <i>API key</i> dari <i>OpenAI</i> diperlukan. Pengguna baru mendapatkan kredit gratis sebesar $18 dan layanan ini sangat murah (satu dolar AS akan mencakup pembuatan embeddings untuk lebih dari satu juta kata).</p>
+    <img src="assets/10.png" alt="" style="width: 40%;">
+    <p>Menggunakan GPT-3 untuk menghasilkan penyematan kali</p>
+
+
+<!-- 9. Pencarian dengan bantuan AI di Snap! manual dan panduan AI -->    
+    <!-- subjudul -->
+    <h3>Pencarian dengan bantuan AI di Snap! manual dan panduan AI </h3>
+    <!-- isi -->
+     <P>Salah satu penggunaan penyematan kalimat adalah pengambilan informasi. Pertimbangkan tugas mencari Snap! manual atau panduan pemrograman AI ini. Pencocokan <i>string</i> tidak dapat memperhitungkan sinonim, cara berbeda untuk mengatakan hal yang sama, atau konvensi ejaan yang berbeda.  <i>this sample search project</i>, penyematan kalimat digunakan untuk membandingkan kueri pengguna dengan fragmen kalimat dari manual dan panduan.</P>
+    <p>Dengan features closest to list of features block fragmen terdekat ditemukan dengan sangat cepat. Penyematan semua fragmen telah dihitung sebelumnya sehingga hanya penyematan kueri pengguna yang diperlukan. Setelah fragmen terdekat telah dihitung, kita dapat kembali melakukan pencarian string karena fragmen tersebut berasal dari dokumen yang sedang dicari.</p>
+    <p>Seseorang dapat menggunakan pencarian yang ditambah AI ini saat bekerja dengan Snap! dengan mengunduh dan mengimpor pencarian panduan pemrograman AI atau Snap! pencarian manual. Mereka bekerja dengan cara yang sama dan memiliki antarmuka yang serupa. Hasilnya cenderung lebih baik jika kuerinya berupa frasa tata bahasa dan bukan pertanyaan.</p>
+    <p>Panduan pemrograman mendukung perintah keyboard berikut:</p>
+        <ol>g - untuk memasukkan permintaan pencarian ke panduan</ol>
+        <ol>t - bertanya dengan berbicara</ol>
+        <ol>x - untuk berhenti mendengarkan pertanyaan</ol>
+    <p>Jepretannya! manual mendukung perintah keyboard ini:</p>
+        <ol>m - untuk memasukkan permintaan pencarian ke manual</ol>
+        <ol>s - untuk mengucapkan pertanyaan</ol>
+        <ol>x - untuk berhenti mendengarkan pertanyaan</ol>
+    <p>Pencarian manual dan panduan dapat diimpor ke proyek yang sama. Namun jangan keduanya mendengarkan pidato Anda secara bersamaan. Bila Anda tidak lagi memerlukan bantuan ini, hapus saja sprite yang diimpor.</p>
+
+<!-- 10. Menggambar penyematan kata -->    
+    <!-- subjudul -->
+    <h3>Menggambar penyematan kata</h3>
+    <!-- isi -->
+     <p>Akan menyenangkan untuk memvisualisasikan 300 angka yang terkait dengan sebuah kata. Salah satu caranya adalah dengan menggambar rangkaian garis vertikal, satu garis untuk setiap fitur.</p>
+     <img src="assets/11.png" alt="" style="width: 40%;">
+     <p>Berikut cara melihat ciri-ciri suatu kata. COBALAH!</p>
+     <p>Versi layar penuh dari program ini dapat ditemukan di sini. Lihat apakah Anda dapat membuat cara lain untuk memvisualisasikan penyematan. Misalnya, untuk membandingkan dua penyematan, mungkin visualisasinya harus disisipkan.</p>
+ 
+<!-- 11. Memetakan 300 titik dimensi ke titik dua dimensi -->    
+    <!-- subjudul -->
+    <h3>Memetakan 300 titik dimensi ke titik dua dimensi  </h3>
+    <!-- isi -->
+     <p>Tidak ada yang bisa memvisualisasikan ruang 300 dimensi. Ada teknik untuk memberikan kesan hubungan antara titik-titik berdimensi sangat tinggi dengan memetakan titik-titik tersebut ke dua atau tiga dimensi. Kami menggunakan teknik yang disebut  <i>t-SNE</i>. Hal ini dapat dipahami sebagai simulasi fisika di mana semua titik di daerah padat saling tolak menolak dan semua titik tertarik ke titik yang jaraknya kecil (dalam ruang berdimensi tinggi). data projector menampilkan 20.000 kata bahasa Inggris dalam dua atau tiga dimensi menggunakan <i>t-SNE</i>, <i>PCA (principal component analysis)</i>, atau  <i>UMAP</i>. Anda juga dapat menggunakan proyektor untuk melihat penyematan kata dalam bahasa berikut:<i>German, Greek, Spanish, French, Finnish, Hindi, Indonesian, Italian, Japanese, Lithuanian, Portuguese, Sinhalese, Swedish, and Chinese</i></p>
+    <p>Perhatikan bahwa dibutuhkan beberapa ratus iterasi t-SNE sebelum dapat menghasilkan pemetaan yang baik dari 300 dimensi. Anda juga dapat mencari kata dan tetangganya serta membuat bookmark. Tautan di atas meluncurkan proyektor dengan penanda yang menunjukkan t-SNE dan menyorot seratus kata yang mendekati 'anjing'.</p>
+    <img src="assets/12.png" alt="" style="width: 40%;">
+    <P>Di pojok kanan bawah, Anda dapat memilih penanda proyektor</P>
+    <p>Berikut adalah program yang menampilkan 50 kata acak di lokasi yang dihasilkan oleh t-SNE. </p>   
+    <img src="assets/13.png" alt="" style="width: 40%;">
+    <P>Berulang kali mengambil sebuah kata dan menampilkannya di lokasi t-SNE-nya. COBALAH!</P>
+
+
+<!-- 12. Menghasilkan File Proyektor untuk memvisualisasikan penyematan -->    
+    <!-- subjudul -->
+    <h3>Menghasilkan File Proyektor untuk memvisualisasikan penyematan  </h3>
+    <!-- isi -->
+     <p>Blok fitur kalimat dan fitur kalimat dapat mengubah kalimat menjadi titik dalam ruang 512 dimensi. <i>Learn more here</i>. Meskipun kita tidak dapat memvisualisasikan ruang ini, ada teknik untuk memetakan titik-titik ini ke dalam 2 atau 3 dimensi yang, meskipun merupakan perkiraan, seringkali memberikan wawasan. <i>TensorFlow Projector</i> mengimplementasikan beberapa teknik serupa di halaman web. Proyektor memerlukan dua file: satu dengan penyematan kalimat (yaitu lokasi di ruang 512D) dan yang lainnya mengaitkan teks kalimat dengan penyematan.</p>
+     <p>Blok <sentences> to TSV melaporkan konten file embeddings dan blok <sentences> to TSV metadata melaporkan konten file metadata. Blok-blok ini dan contoh sepele penggunaannya dapat ditemukan di proyek <i>generate projector files</i> . Setelah blok ini dijalankan dan hasilnya diekspor sebagai file TSV, Anda dapat meluncurkan Proyektor  <i>TensorFlow Projector</i> dan mengklik tombol Muat untuk memuat file Anda ke dalam proyektor.</p>
+    <p>Contoh penggunaan blok ini adalah penerapan <i>application of the TensorFlow Projector to the sentences in the Snap! manual..</i>> Setelah menjelajahinya, kami sarankan Anda mengklik <i>bookmark APL</i> untuk melihat seseorang menggunakan proyeksi ini.</p>
+
+<!-- 13.Penyematan kata dapat melakukan terjemahan-->    
+    <!-- subjudul -->
+    <h3>Penyematan kata dapat melakukan terjemahan    </h3>
+    <!-- isi --> 
+     <p>Apa yang akan terjadi jika Anda mengambil, misalnya, ciri-ciri kata 'anjing' dalam bahasa Inggris dan menanyakan kata yang paling mendekati, misalnya, dalam bahasa Prancis? Cobalah ini dengan bahasa sumber dan target yang berbeda serta kata-kata yang berbeda. Bandingkan dengan <i>Google Translate.</i>  Tip: mudah untuk menyalin dan menempelkan kata-kata yang tidak dapat diketik oleh keyboard Anda dari halaman <i>Google Translate..</i> Atau Anda dapat menggunakan  <i>input method editor</i> yang didukung oleh sistem operasi perangkat Anda. Bahasa yang didukung adalah China, Inggris, Finlandia, Prancis, Jerman, Yunani, Hindi, Indonesia, Italia, Jepang, Lituania, Portugis, Sinhala, Spanyol, dan Swedia.</p>
+     <img src="assets/14.png" alt="" style="width: 40%;">
+     <p>Temukan kata terdekat dalam bahasa lain.</p>
+     <p>Perhatikan bahwa versi kata terdekat ini memiliki pilihan bagaimana seseorang mengukur jarak antara dua vektor.  <i>Euclidean distance</i> adalah ukuran jarak 2D yang lazim. <i>Cosine similarity</i> serupa tetapi lebih disukai oleh para ahli. Lihat apakah ada bedanya kata mana yang paling dekat dengan kata yang belum diterjemahkan.</p>
+
+<!-- 14. Game 'Tebak Kata Saya' menggunakan penyematan kata-->    
+    <!-- subjudul -->
+    <h3>Game 'Tebak Kata Saya' menggunakan penyematan kata</h3>
+    <!-- isi --> 
+     <p>Permainan berikut memilih kata acak dan memberikan umpan balik yang lebih hangat atau lebih dingin kepada pemain saat pemain menebak. Caranya dengan membandingkan jarak kata rahasia dengan jarak sebelumnya. Ia menggunakan lokasi ... blok reporter untuk menampilkan tebakan Anda. Permainan ini sangat sulit! Ada banyak cara untuk membuat permainan menjadi lebih baik. Lihat apakah Anda bisa!</p>
+     <img src="assets/15.png" alt="" style="width: 40%;">
+     <P>Klik bendera hijau untuk memainkan Tebak Kata Saya. COBALAH! </P>
+    
+     
+<!-- 15. Menjawab pertanyaan -->    
+    <!-- subjudul -->
+    <h3>Menjawab pertanyaan</h3>
+    <!-- isi --> 
+     <p>Peneliti pemrosesan bahasa alami telah melatih model untuk mengatasi tugas tingkat kalimat seperti menjawab pertanyaan. Mereka memiliki nama <i>Sesame Street</i>  seperti Elmo, Bert, dan Ernie. Bert (sebenarnya BERT yang merupakan singkatan dari Representasi Encoder Dua Arah dari Transformers) telah tersedia untuk <i>browser</i>.</p>
+     <P>BERT digunakan dalam implementasi dapatkan hingga 5 jawaban tanya jawab ... menggunakan blok bagian ini. Dengan adanya satu bagian teks (biasanya satu halaman atau kurang), mereka dapat menjawab pertanyaan tentang isinya. Blok pertanyaan dapatkan hingga 5 jawaban melaporkan daftar yang elemennya berupa daftar jawaban dan skor yang menunjukkan seberapa yakin model tersebut. Cara mudah untuk mengimpor bagian ke Snap! adalah menyeret file yang berisi teks biasa ke area skrip</P>
+     <img src="assets/16.1.png" alt="" style="width: 40%;">
+     <P>Ajukan pertanyaan tentang bagian teks yang menjelaskan Snap!. COBALAH!</P>
+    
+    
+<!-- 16. Mendapatkan tanggapan dari GPT-3, Jurassic 1, atau Cohere -->    
+    <!-- subjudul -->
+    <h3>Mendapatkan tanggapan dari GPT-3, Jurassic 1, atau Cohere</h3>
+    <!-- isi --> 
+     <P>GPT-3 adalah model jaringan saraf yang mampu menghasilkan teks sebagai respons terhadap perintah. Hal yang mengesankan adalah seberapa sering teks yang dihasilkan sangat tepat baik itu menjawab pertanyaan, memperbaiki tata bahasa kalimat, merangkum teks, atau mengikuti instruksi. GPT-3 dilatih mengenai ratusan miliar kata dari halaman web dan buku. Anehnya, "satu-satunya" hal yang dipelajarinya adalah memprediksi kata berikutnya (atau token yang terkadang merupakan bagian dari sebuah kata). Orang menyebut model seperti ini “model bahasa”.</P>
+     <p>Anda dapat mengakses GPT-3 dari Snap! menggunakan blok lengkap menggunakan GPT-3.... Anda harus menyediakannya dengan <i> OpenAI GPT-3 API key</i>. Ia menerima banyak <i>options supported by the OpenAI API</i>.</p>
+    <p><i>AI21 Studios</i> telah merilis model mirip dengan GPT-3 yang disebut Jurassic 1 seperti yang dimiliki <i>Cohere</i>. Blok lengkap menggunakan Jurassic 1 ... dan lengkap menggunakan <i>Cohere</i> ... berfungsi sangat mirip dengan versi GPT-3. Anda perlu mendapatkan  <i>AI21 Studios or Cohere</i>. Jurassic 1 and Cohere model. Opsi model Jurassic 1 dan Cohere juga mirip dengan opsi GPT-3 tetapi perhatikan bahwa opsi tersebut diterapkan oleh sekumpulan reporter paralel yang diakhiri dengan "(J1)" atau "(Cohere)". Ada juga opsi reporter umum yang dapat ditemukan di Snap "Model bahasa"! Kategori.</p>
+    <img src="assets/17.png" alt="" style="width: 40%;">
+    <p>Lihat bagaimana model GPT-3, Jurassic 1, dan Cohere yang berbeda melengkapi perintah Anda</p>
+
+
+<!-- 17. Melakukan percakapan dengan GPT-3, Jurassic 1, atau Cohere -->    
+    <!-- subjudul -->
+    <h3>Melakukan percakapan dengan GPT-3, Jurassic 1, atau Cohere</h3>
+    <!-- isi --> 
+     <p>GPT-3, Jurassic 1, or Cohere Gopher adalah contoh program yang mencoba mengadakan percakapan menggunakan GPT-3, Jurassic 1, atau Cohere. Ia menggunakan <i>speech recognition</i> untuk mendengarkan apa yang Anda katakan. Apa yang Anda ucapkan ditambahkan ke perintah yang mencoba membuat GPT-3 menjadi pembicara yang baik dengan menjelaskan situasinya dan memberikan beberapa percakapan. Hal ini menghindari masalah seiring berjalannya percakapan, perintah menjadi terlalu panjang untuk GPT-3 dengan memotongnya sambil mempertahankan deskripsi konteks. Baca <i>Conversations with and between personas using language models</i> untuk mempelajari lebih lanjut.</p>
+    <p>Proyek ini mendukung beberapa "persona". Gopher adalah upaya untuk menjadi pembicara umum yang ramah. El diminta untuk berpura-pura menjadi gajah sehingga seseorang dapat menanyakan pertanyaan seperti "Apa makanan favoritmu?" atau "Apakah kamu suka jogging?". Hawa berpura-pura menjadi Gunung Everest. Ajukan pertanyaan seperti "Berapa berat badanmu?" atau "Bagaimana saya bisa datang mengunjungi Anda?". Charles adalah simulasi sederhana dari Charles Darwin. Tanyakan padanya tentang kehidupannya, evolusinya, atau bukunya. Contrarian suka berdebat sedangkan Curiosity sangat ingin tahu. Persona yang berbeda ini menjalankan skrip yang sama. Perbedaannya hanya pada teks pengantar dan contoh percakapan awal. Mereka bahkan dapat berbicara satu sama lain!</p>
+    <p>Perhatikan bahwa proyek ini juga mengilustrasikan bagaimana seseorang dapat membuat antarmuka yang sepenuhnya berorientasi pada ucapan. Selain komunikasi <i>API key</i> Anda, semuanya menggunakan input dan output ucapan. Hal ini sangat berguna ketika proyek dijalankan pada ponsel pintar. Lihatlah skrip untuk melihat cara kerjanya.</p>
+    
+
+<!-- 18. Menghasilkan perdebatan -->    
+    <!-- subjudul -->
+    <h3>Menghasilkan perdebatan</h3>
+    <!-- isi -->     
+     <p>Debate adalah contoh program yang menggunakan model bahasa dari <i>OpenAI</i>, <i>AI21 Studios, or Cohere</i>  untuk menghasilkan transkrip debat virtual tentang topik apa pun. Baca posting ini untuk mempelajari lebih lanjut</p> 
+
+<!-- 19. Menghasilkan perintah penyu -->    
+    <!-- subjudul --> 
+    <h3>Menghasilkan perdebatan</h3>
+    <!-- isi -->    
+     <p><i>Turtle command generator</i>  adalah contoh program yang menggunakan GPT-3 untuk mengontrol gerakan sprite. Ia bekerja dengan membuat GPT-3 menghasilkan perintah Logo turtle sebagai respons terhadap instruksi lisan atau ketikan. Perintah-perintah itu kemudian diubah menjadi Snap! blok. Baca post ini untuk mempelajari lebih lanjut.</p>  
+     <img src="assets/18.png" alt="" style="width: 40%;">
+     <p>Lihat bagaimana seseorang mendapatkan model bahasa untuk menghasilkan perintah gerakan</p>
+     <p>Anda dapat menghentikan proyek dan menjalankan perintah log ke blok untuk mengubah riwayat interaksi Anda menjadi Snap! blok. Misalnya,</p>
+     <img src="assets/19.png" alt="" style="width: 40%;">
+     <img src="assets/20.png" alt="" style="width: 40%;">
+
+
+<!-- 20. Menggunakan kata-kata untuk menghasilkan kostum menggunakan DALLE-2 -->    
+    <!-- subjudul --> 
+    <h3>Menggunakan kata-kata untuk menghasilkan kostum menggunakan DALLE-2</h3>
+    <!-- isi -->  
+     <p>Blok Minta DALLE-2 untuk membuat ... kostum ... dapat digunakan untuk menghasilkan kostum. Dengan <i>API key from OpenAI </i> seseorang dapat menggunakan blok ini untuk menghasilkan kostum (dengan biaya masing-masing 2 sen AS atau kurang). Deskripsi kostum Anda dapat mencakup medium (cat air, foto, kaca patri, lukisan cat minyak, dll.), gaya (seperti Simpsons, Studio Ghibli, Rembrandt, Picasso, Cezanne, dll.), pencahayaan, sudut pandang, dll. Pelajari lebih lanjut tentang DALL-E -2 here. </p>
+     <img src="assets/21.1.png" alt="" style="width: 40%;">
+     <P>Sebuah blok untuk menghasilkan kostum sebagai respons terhadap teks menggunakan DALLE-2</P>
+     <p>DALL-E-2 demo project ini meminta deskripsi dan membuat dua kostum, menambahkannya ke sprite, lalu memudar masuk dan keluar di antara keduanya. Ini juga menunjukkan cara mengganti warna (dalam hal ini putih) dengan transparansi.     </p>
+
+    
+<!-- 21.Blok teks-ke-gambar umum -->    
+    <!-- subjudul --> 
+    <h3>Blok teks-ke-gambar umum</h3>
+    <!-- isi -->    
+    <p>Blok Tanya ... untuk membuat kostum yang dideskripsikan sebagai ... dapat menggunakan<i>Stable Diffusion text-to-image model or DALLE-2</i> untuk menghasilkan gambar.</p> 
+    <img src="assets/22.png" alt="" style="width: 40%;"> 
+    <p>Sebuah blok untuk menghasilkan kostum sebagai respons terhadap teks menggunakan Difusi Stabil atau DALLE-2</p>
+    
+<!-- 22.Menggunakan DALL-E-2 untuk membuat varian kostum -->    
+    <!-- subjudul --> 
+    <h3>Menggunakan DALL-E-2 untuk membuat varian kostum </h3>
+    <!-- isi --> 
+     <p>Blok Minta DALLE-2 untuk membuat ... kostum sebagai varian kostum ... dapat digunakan untuk membuat varian kostum. Lebar dan tinggi kostum harus sama.</p>
+     <img src="assets/23.png" alt="" style="width: 40%;"> 
+     <p>Sebuah blok untuk menghasilkan kostum varian</p>
+    
+    
+<!-- 23. Sebuah blok untuk menghasilkan kostum varian -->    
+    <!-- subjudul --> 
+    <h3>Sebuah blok untuk menghasilkan kostum varian </h3>
+    <!-- isi -->     
+     <p>Blok Minta DALLE-2 untuk membuat ... kostum sebagai pengeditan kostum ... dapat digunakan untuk mengedit kostum. Lebar dan tinggi kostum serta kostum "topeng" harus sama. "Kostum topeng" harus memiliki piksel transparan yang akan diganti tergantung perintah yang diberikan.</p>
+     <img src="assets/24.jpg" alt="" style="width: 40%;"> 
+     <p>Sebuah blok untuk mengedit kostum</p>
+     <p><i>sample project</i> ini menggabungkan varian DALL-E dan blok pengeditan dengan <i>the computer vision segmentation block</i>. Proyek ini mengambil foto seseorang, membuat varian, menggunakan segmentasi untuk membuat topeng latar belakang, dan pengeditan DALL-E untuk mengubah latar belakang sesuai dengan perintah yang dimasukkan.</p>
+    
+<!-- 24. Menggunakan model bahasa pada Hugging Face -->    
+    <!-- subjudul --> 
+    <h3>Menggunakan model bahasa pada Hugging Face </h3>
+    <!-- isi -->  
+     <p><i>Hugging Face</i> menyediakan akses ke lebih dari 15.000 model jaringan saraf. Tersedia kunci API gratis yang dibatasi hingga 30.000 karakter input per bulan saat berkomunikasi dengan model berbasis teks. Masukan tambahan dikenakan biaya $10 per juta karakter. Lihat <i>Hugging Face pricing</i>. </p>  
+    <p>Model <i>Hugging Face</i>memiliki kegunaan yaitu: </p>
+        <ol>Terjemahkan antar bahasa. Tersedia lebih dari 1300 model yang menerjemahkan dari bahasa X ke bahasa Y.</ol>
+        <ol>Klasifikasikan teks ke dalam kategori yang Anda pilih. Secara opsional, teks dapat diberi beberapa label.</ol>
+        <ol>Menghasilkan ringkasan teks. Secara opsional dapat mengontrol panjang, pengulangan, dan banyak lagi.</ol>
+        <ol>Adakan percakapan. Perhatikan bahwa model ini jauh lebih kecil dan kurang mampu dibandingkan model terbesar GPT-3, Jurassic 1, dan Cohere.</ol>
+        <ol>Kueri spreadsheet. Ajukan pertanyaan tentang tabel data.</ol>
+        <ol>Jawab pertanyaan berdasarkan konteksnya. Perhatikan bahwa model serupa dapat dijalankan di <i>browser</i> tanpa mengakses <i>Hugging Face</i>.</ol>
+        <ol>Deteksi seberapa positif atau negatif suatu teks.</ol>
+        <ol>Temukan entitas bernama di beberapa teks.</ol>
+        <ol>Isi bagian yang kosong. Akan memprediksi teks yang hilang.</ol>
+
+<!-- 25. Manfaat dan risiko menggunakan penyematan kata -->    
+    <!-- subjudul --> 
+    <h3>Manfaat dan risiko menggunakan penyematan kata</h3>
+    <!-- isi --> 
+     <p>Penyematan kata dan kalimat dapat digunakan sebagai komponen dalam program AI yang melakukan analisis sentimen, deteksi entitas, rekomendasi, merangkum teks, terjemahan, dan menjawab pertanyaan. Hal ini biasanya dilakukan dengan mengganti kata atau frasa dalam teks dengan penyematannya, lalu melatih sistem pembelajaran mesin tentang perkiraan arti kata tersebut. Hal ini membuat sistem bekerja lebih baik dengan sinonim dan parafrase.</p>
+     <p>Penyematan kata dipelajari dengan memeriksa teks dengan miliaran kata. Teks-teks ini mungkin menangkap bias masyarakat. Misalnya saja, contoh berikut tampaknya menangkap bias bahwa tukang daging adalah laki-laki dan pembuat roti adalah perempuan. Namun biasanya sangat lemah sehingga jika kesamaan kosinus digunakan sebagai pengganti jarak Euclidean, maka "koki" yang tidak bias akan ditemukan. Beberapa database penyematan kata memiliki bias bahwa dokter adalah laki-laki dan perawat adalah perempuan. Mereka akan menjawab pertanyaan "laki-laki ke dokter seperti perempuan ke X" dengan "perawat". Apakah ini sebuah bias? Atau mungkin karena hanya perempuan yang bisa menyusui bayi? Jalankan beberapa eksperimen di bawah untuk mengeksplorasi pertanyaan-pertanyaan semacam ini.</p>
+     <img src="assets/25.png" alt="" style="width: 40%;"> 
+
+     <p>Bias dalam solusi analogi kata. Jalankan lalu tukar pria dan wanita. Lihat apakah Anda dapat menemukan lebih banyak bias.</p>
+     <p>Sebuah makalah berjudul Semantik yang diturunkan secara otomatis dari korpora bahasa yang mengandung bias mirip manusia mengusulkan cara untuk mengukur bias kata. Idenya adalah menggunakan jarak rata-rata yang dimiliki dua kata terhadap dua kumpulan kata "atribut". Untuk mengeksplorasi bias gender, misalnya, daftar kata atribut dapat berupa “laki-laki, laki-laki, laki-laki” dan “perempuan, perempuan, perempuan”. Perbedaan jarak rata-rata memberikan skor yang dapat digunakan untuk membandingkan kata. Dalam penerapan penilaian reporter ini terlihat bahwa “matematika” memiliki skor “kejantanan” yang lebih tinggi daripada “seni”. Dan “seni” memiliki skor “kesenangan” yang lebih tinggi dibandingkan “matematika”.</p>
+
+<!-- 26. Bagaimana cara kerja penyematan kata? -->    
+    <!-- subjudul --> 
+    <h3>Bagaimana cara kerja penyematan kata?</h3>
+    <!-- isi --> 
+     <p>Meskipun kita tidak benar-benar tahu apa arti angka-angka tersebut, angka-angka tersebut pasti mengkodekan banyak hal tentang kata-kata seperti jenis kelamin, kategori tata bahasa, hubungan keluarga, dan ratusan hal lainnya. Namun jumlahnya tidak sempurna.</p>
+      <p>Lihat apakah Anda dapat membuat beberapa contoh yang hasilnya tidak bagus. Salah satu masalah umum dalam cara menghasilkan angka adalah bahwa angka tersebut menggabungkan fitur-fitur dari arti yang berbeda dari kata yang sama. Hanya ada satu entri, misalnya, untuk 'bank' yang menggabungkan cara penggunaan kata tersebut dalam kalimat tentang lembaga keuangan dan kalimat tentang tepi sungai.</p>
+      <p>Hal ini dapat menyebabkan kata-kata menjadi lebih dekat dari yang seharusnya. Misalnya, "tikus" dan "layar" menjadi lebih berdekatan karena "tikus" berada dekat dengan "mouse" dan "mouse" (perangkat masukan komputer) berada dekat dengan "layar" (komputer). Ini adalah masalah yang sedang ditangani para peneliti. Masalah lainnya adalah terkadang frasa pendek berfungsi seperti kata-kata. "Es krim", misalnya, tidak memiliki kata yang disematkan, sedangkan "serbet" dan "sorbet" memilikinya</p>  
+
+<!-- 27. Contoh proyek yang menggunakan penyematan kata untuk terjemahan -->    
+    <!-- subjudul --> 
+    <h3>Contoh proyek yang menggunakan penyematan kata untuk terjemahan</h3>
+    <!-- isi -->       
+    <p>Berikut adalah program yang menanyakan dua bahasa kepada pengguna, memperoleh vektor fitur dari kata acak dari bahasa pertama, dan kemudian menampilkan beberapa kata yang paling dekat dengan vektor fitur tersebut. Ini menempatkan kata-kata dalam perkiraan dua dimensi t-SNE di mana kata-kata 300 dimensi sebenarnya berada</p>
+
+<!-- 28. Bagaimana cara kerja terjemahan menggunakan penyematan kata?-->    
+    <!-- subjudul --> 
+    <h3>Bagaimana cara kerja terjemahan menggunakan penyematan kata?</h3>
+    <!-- isi -->
+     <p>Penyematan kata untuk setiap bahasa dihasilkan secara independen berdasarkan teks dari Wikipedia dan web. Lokasi fitur dalam ruang 300 dimensi untuk kata seperti 'anjing' tidak ada hubungannya dengan lokasi fitur terjemahan kata 'anjing'. Para peneliti memperhatikan bahwa di sebagian besar (semua?) bahasa, beberapa kata saling berdekatan. Misalnya, 'anjing', 'anjing', anak anjing', dan 'anjing' itu dekat. Kata-kata seperti 'serigala', 'sapi', dan 'tikus' memang mirip tetapi tidak sedekat kata-kata itu</p>
+     <p>Dan semua kata tersebut jauh dari kata-kata abstrak seperti 'kebenaran' dan 'logika'. Jadi mereka menemukan bahwa ada kemungkinan untuk menemukan rotasi yang akan menyebabkan banyak kata yang disematkan dalam satu bahasa menjadi dekat dengan kata-kata yang terkait dalam bahasa lain.</p>
+     <p>Cara yang dilakukan pada awalnya dan di Snap ini! blok adalah dengan memberikan program daftar kata antara bahasa Inggris dan bahasa lainnya. 500 kata sudah cukup untuk menemukan rotasi bagus yang mendekatkan sebagian besar 19.500 kata lainnya ke tempat terjemahannya.</p>
+     <p>Meskipun sangat mengesankan bahwa terjemahan berhasil mengingat daftar kata yang hanya mencakup 2,5% kosakata, para peneliti di <i>Facebook</i> menjelaskan teknik yang tidak menggunakan daftar kata atau teks terjemahan. Hanya diperlukan rotasi karena semua kata yang disematkan berpusat di sekitar nol sehingga tidak perlu diterjemahkan (dalam arti matematis, yaitu dipindahkan) juga.</p>
+     <p>amun perhatikan bahwa terjemahannya terjadi dalam 299 dimensi!</p>
+     <img src="assets/26.png" alt="" style="width: 40%;">
+     <p>Dua cara menyelaraskan penyematan kata dalam bahasa berbeda
+        Pada gambar (A) dan (B) menunjukkan X diputar untuk mencocokkan Y untuk membuat sejumlah kecil kata di X sejajar dengan terjemahannya di Y. Hasilnya, banyak kata lain yang kira-kira sejajar. Teknik lain dapat diterapkan untuk meningkatkan keselarasan.</p>
+
+<!-- 29.Penyematan gambar juga dimungkinkan-->    
+    <!-- subjudul --> 
+    <h3>Penyematan gambar juga dimungkinkan </h3>
+    <!-- isi -->
+     <p>Dengan menggunakan teknik serupa dengan cara menghasilkan vektor untuk kata-kata, kita juga dapat menghasilkan vektor untuk gambar. Fitur get kostum dari ... blok akan meneruskan vektor 1280 angka ke blok yang disediakan. Ini menggunakan <i>Mobile Net</i> untuk menghitung angka dari "atas" jaringan saraf.</p>
+     <img src="assets/27.png" alt="" style="width: 40%;">
+     <p>Sebuah blok untuk mengubah gambar menjadi daftar 1280 angka. COBALAH!</p>
+     <p>Seseorang dapat menggunakan penyematan gambar untuk menentukan gambar mana yang dekat dengan gambar lainnya. Kedekatan memperhitungkan banyak faktor termasuk tekstur, warna, bagian, dan semantik. Penyematan gambar dapat digunakan untuk menyelesaikan masalah analogi gambar yang serupa dengan cara menyelesaikan masalah analogi kata</p>
+     <p>Pada bab pembelajaran mesin terdapat deskripsi kereta dengan gambar ember ... blok yang digunakan untuk pelatihan. Ia bekerja dengan mengumpulkan vektor fitur dari semua gambar pelatihan dan kemudian menemukan tetangga terdekat dengan gambar uji untuk menentukan label apa yang akan diberikan pada gambar tersebut.</p>
+     
+<!-- 30. Kemungkinan ide proyek untuk Pemrosesan Bahasa Alami -->    
+    <!-- subjudul --> 
+    <h3>Kemungkinan ide proyek untuk Pemrosesan Bahasa Alami</h3>
+    <!-- isi --> 
+     <p>Berikut adalah beberapa ide proyek:</p>
+     <ol>1. Temukan rangkaian kata yang mirip dengan mencari kata yang paling dekat dengan kata awalnya. Kemudian berulang kali temukan kata yang terdekat dengan kata tersebut sambil memastikan untuk tidak pernah mengulangi kata yang sama. Gunakan ini untuk berulang kali mengubah kata-kata acak satu per satu dalam puisi atau teks terkenal (misalnya, "mawar berwarna merah dan violet berwarna biru").</ol>
+     <ol>2. Buat permainan kata menggunakan penyematan kata. Misalnya saja Semantris, versi semantik dari Tetris. Semantris versi bilingual mungkin merupakan ide yang bagus </ol>
+     <ol>3. Buat program yang mencari analogi kata baru. Petunjuk: Jika A ke B dan C ke D, maka A-B "mendekati" C-D.</ol>
+     <ol>4. Jelajahi mengapa terkadang analogi kata benar dan terkadang salah. Apakah jawaban terdekat kedua, ketiga, atau kesepuluh lebih masuk akal? Petunjuk: gunakan kata-kata yang paling dekat dengan reporter untuk mendalami hal ini. Apakah analogi kata lebih baik jika A dekat dengan B dalam "A ke B seperti C ke D"?</ol>
+     <ol>5. Para peneliti menemukan bahwa jika melihat jarak rata-rata antara kata menyenangkan dan kata 'bunga', jarak tersebut jauh lebih kecil dibandingkan jarak 'bunga' ke kata tidak menyenangkan. Hal sebaliknya terjadi jika menelusuri jarak kata menyenangkan dan tidak menyenangkan dengan kata 'serangga'. Berdasarkan pengamatan ini, orang-orang membuat perbandingan lain untuk melihat bagaimana, misalnya, kata-kata tentang laki-laki lebih mirip dengan kata-kata tentang sains, sedangkan kata-kata tentang perempuan lebih mirip dengan kata-kata seni. Lihat apakah Anda dapat menemukan bias lain yang muncul dari cara orang menulis tentang sesuatu. Jika Anda mengetahui bahasa lain (dan bahasa tersebut merupakan salah satu dari 15 bahasa yang didukung) lihat apakah bahasa tersebut berlaku di berbagai bahasa.</ol>
+     <ol>6. Jelajahi hubungan antar kata dalam kelompok seperti kata berwarna atau kata emosi. Apakah 'merah', 'hijau', dan 'biru' berdekatan satu sama lain atau merupakan kata-kata warna yang berdekatan bila warnanya tampak serupa. Jika Anda mengetahui bahasa lain, lihat apakah bahasa yang berbeda mengatur kata-kata berwarna secara berbeda. Coba ini dengan kategori lain seperti emosi, arah, angka, dll.</ol>
+     <ol>7. Jelajahi hubungan antara versi tata bahasa yang berbeda dari kata dasar yang sama. Misalnya, hubungan 'tinggi', 'lebih tinggi', 'tertinggi', 'pendek', 'lebih pendek', 'terpendek'. Atau 'lari', 'lari', 'berlari' (dan 'berair' dan 'lebih berlari'). Dapatkah Anda menemukan beberapa pola umum? Apakah mereka menggeneralisasi ke bahasa lain?</ol>
+     <ol>8. Jelajahi penyematan kata untuk kata angka. Misalnya, "dua" berarti "empat" dan "sepuluh" berarti "dua puluh". Dapatkah Anda menemukan contoh lain?</ol>
+     <ol>9. Tebak Kata Saya sangat sulit karena jawabannya bisa satu dari 20.000 kata. Buatlah versi permainan yang lebih mudah.</ol>
+     <ol>10. Menerapkan Spymaster untuk game Codenames.</ol>
+     <ol>11. Coba gunakan embeddings untuk mengeksplorasi kesamaan kalimat. Gunakan blok fitur kalimat... untuk mendapatkan fitur kalimat. Buat proyek yang memutuskan apakah dua kalimat merupakan parafrase.</ol>
+     <ol>12. Buat proyek penjawab pertanyaan yang memeriksa apakah pertanyaan yang diajukan cukup mirip dengan pertanyaan yang diketahui sehingga dapat dibalas dengan jawaban "kalengan". Anda mungkin ingin memulai dengan meningkatkan contoh proyek yang menjawab pertanyaan tentang Snap! blok AI</ol>
+     <ol>13. Menggunakan blok jawaban pertanyaan ini ... menggunakan bagian ini ... bersama dengan blok Tanya <i>Wikipedia</i> untuk membuat program penjawab pertanyaan umum. Pertimbangkan untuk menambahkan masukan dan keluaran ucapan.</ol>   
+     <ol>14. Ada banyak cara untuk menambahkan GPT-3 ke proyek Anda dengan menggunakan blok lengkap menggunakan GPT-3 .... OpenAI mencantumkan lusinan tugas yang dapat Anda berikan.</ol>
+     <ol>15. Proyek percakapan GPT-3, Jurassic 1, dan Cohere mendukung beberapa persona. Lihat apakah Anda dapat menciptakan lebih banyak lagi. Misalnya, perhatikan Bima Sakti</ol>
+     <ol>16. Alternatifnya, daripada menyempurnakan proyek percakapan, buatlah proyek percakapan Anda sendiri dari awal dengan mengikuti tutorial ini.</ol>
+     <ol>17. Contoh proyek GPT-3 untuk menghasilkan cerita bergambar dapat dieksplorasi dengan mengubah perintah, suhu penyelesaian, dan pengaturan lainnya.</ol>
+     <ol>18. Blok Minta DALLE-2 untuk membuat ... kostum ... dapat digunakan dalam proyek yang menggambar sesuatu dan membuat kostum baru menggunakan perintah tekstual dan jalur pena untuk membuat kostum gambar.</ol>
+     <ol>19. Proyek pembuatan debat virtual dapat ditingkatkan dengan banyak cara termasuk menciptakan lebih banyak sanggahan dan ringkasan.</ol>
+     <ol>20. Jadilah kreatif! Penyematan kata dan model bahasa merupakan hal baru dan masih banyak yang perlu ditemukan.</ol>
+
+<!-- 31. Arah masa depan untuk bab ini -->    
+    <!-- subjudul --> 
+    <h3>Arah masa depan untuk bab ini </h3>
+    <!-- isi -->     
+     <p>Blok penyematan kata baru dapat ditambahkan. Saat ini kata blok embeddings tidak termasuk semua kata benda yang tepat. Jika kita menambahkannya, kita dapat memecahkan analogi seperti Paris dengan Perancis dan Berlin dengan X. Menjelajahi bagaimana kata-kata berubah seiring waktu dapat menghasilkan proyek-proyek besar. Penyematan kata yang dihasilkan dari publikasi dalam periode waktu berbeda dapat digunakan untuk melihat bagaimana kata-kata seperti "mengerikan" dan "siaran" telah berubah selama dua abad terakhir. Blok baru dapat ditambahkan berdasarkan penelitian tentang menghasilkan penyematan "makna kata" dan bukan penyematan kata. Misalnya, satu arti "bebek" dekat dengan "ayam" sementara arti lain dekat dengan "melompat".</p>
+     <p>Masih banyak lagi yang dapat dilakukan program AI dengan bahasa termasuk menentukan struktur tata bahasa kalimat (ini disebut "parsing"), mencari tahu sentimen dalam beberapa teks, dan meringkas teks. Kami berencana untuk menambahkan lebih banyak.</p>
+
+<!-- 33. Sumber daya tambahan -->    
+    <!-- subjudul --> 
+    <h3>Sumber daya tambahan </h3>
+    <!-- isi -->   
+     <p>Artikel penyematan kata Wikipedia pendek dan ditulis untuk pembaca tingkat lanjut. Tim Facebook menulis makalah yang merinci bagaimana mereka menghasilkan penyematan kata yang kami gunakan di sini: E. Grave, P. Bojanowski, P. Gupta, A. Joulin, T. Mikolov, Mempelajari Vektor Kata untuk 157 Bahasa.</p>
+     <p>Halaman web Memahami vektor kata memiliki pengenalan subjek yang sangat baik dan berisi contoh-contoh yang berguna tetapi memerlukan pemahaman tentang Python. Blog Google tentang bias dalam penyematan kata ini sangat bagus dan jelas. Kursus Mengarahkan Google yang tepat untuk AI membahas bias dan masalah sosial lainnya termasuk interpretasi, pekerjaan, dan berbuat baik. Adil Lebih Baik daripada Sensasional: Laki-laki ke Dokter seperti Wanita ke Dokter membahas bias dalam penyematan kata secara mendalam.</p>
+     <p>Cara Menggunakan t-SNE Secara Efektif adalah penjelasan interaktif yang jelas tentang cara kerja t-SNE. Memanfaatkan Kesamaan antar Bahasa untuk Terjemahan Mesin memelopori gagasan menyesuaikan penyematan kata untuk mendukung terjemahan. Terjemahan Kata Tanpa Data Paralel mengeksplorasi bagaimana penyematan kata dapat digunakan untuk terjemahan tanpa menggunakan daftar kata atau teks terjemahan.</p>
+     <P><i>proyektor.tensorflow.org</i> adalah situs web bagus untuk menjelajahi berbagai cara memvisualisasikan ruang berdimensi tinggi secara interaktif. Berikut adalah video ceramah indah Laurens van der Maaten yang menemukan ide t-SNE.</P>   
+   
+<!-- 35. Di mana mendapatkan blok ini untuk digunakan dalam proyek Anda -->    
+    <!-- subjudul --> 
+    <h3>Di mana mendapatkan blok ini untuk digunakan dalam proyek Anda </h3>
+    <!-- isi -->    
+     <p>Anda dapat mengimpor blok yang disajikan di sini sebagai proyek atau mengunduhnya sebagai perpustakaan untuk diimpor ke proyek Anda.</p>
+
+<!-- 36. Pelajari tentang membuat dan melatih jaringan saraf -->    
+    <!-- subjudul --> 
+    <h3>Pelajari tentang membuat dan melatih jaringan saraf </h3>
+    <!-- isi -->    
+     <p>Lanjutkan ke bab berikutnya tentang jaringan saraf</p>
+     <p>Kembali ke bab sebelumnya tentang pembelajaran mesin.</p>
+     <p>Buka halaman beranda AI</p>
+     <img src="assets/28.png" alt="" style="width: 40%;">  
+    </body>
+     </html>
